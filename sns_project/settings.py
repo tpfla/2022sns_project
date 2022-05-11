@@ -56,13 +56,13 @@ ROOT_URLCONF = 'sns_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'sns_project','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -124,22 +124,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'basic','templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            
-        }
-    }
-]
-
 
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'basic','static')
+    os.path.join(BASE_DIR,'sns_project','static')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
