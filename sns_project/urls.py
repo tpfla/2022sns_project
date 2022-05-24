@@ -30,4 +30,5 @@ urlpatterns = [
     path('mew/', views.new, name="new"),
     path('create/',views.create, name="create"),
     path('update/<str:id>', update, name="update"),
+    path('accounts/',include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
